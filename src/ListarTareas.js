@@ -1,7 +1,9 @@
+import './ListarTareas.css';
+
 // se crea el componente ListaCounter
 function ListarTareas(props) {
     return (
-      <ul>
+      <ul className="ListarTareas">
         {props.children}
       </ul>
     )

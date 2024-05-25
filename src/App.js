@@ -3,8 +3,9 @@ import { ListarCounter } from './ListarCounter';
 import { ListarSearch } from './ListarSearch';
 import { ListarTareas } from './ListarTareas';
 import { ListarItem } from './ListarItem';
+import { CrearItemButtom } from './CrearItemButtom';
 import React from 'react';
-// import './App.css';
+import './App.css';
 
 const defaultTareas = [
   { text: 'Tareas 1', completed: true },
@@ -29,12 +30,7 @@ function App() {
           />
         ))}
       </ListarTareas>
-
-
-     
-
-
-      {/* <CrearItemButton /> */}
+      <CrearItemButtom /> 
     </React.Fragment>
 
   );

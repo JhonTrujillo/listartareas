@@ -1,10 +1,11 @@
+import './ListarItem.css'
 // se crea el componente ListaItem
 function ListarItem(props) {
     return (
-      <li>
-        <span>V{props.completed}</span>
-        <p>{props.text}</p>
-        <span>X</span>
+      <li className='ListarItem'>
+        <span className="Icon Icon-ckeck Icon-check--active">V{props.completed}</span>
+        <p className='ListarItem-p ListarItem-p--complete'>{props.text}</p>
+        <span className='Icon Icon-delete'>X</span>
       </li>
     )
   }

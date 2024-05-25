@@ -1,7 +1,8 @@
+import './ListarSearch.css';
 // se crea el componente ListaSearch
 function ListarSearch() {
     return (
-      <input placeholder="Agregar Tareas"/>
+      <input placeholder="Buscar Tarea" className='ListarSearch'/>
     )
   }
 

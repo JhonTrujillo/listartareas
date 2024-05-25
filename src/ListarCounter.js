@@ -1,8 +1,9 @@
+import './ListarCounter.css';
 // se crea el componente ListaCounter
 function ListarCounter({total, completed}) {
     return (
-      <h1>
-        Has Completado {completed} de {total} tareas
+      <h1 className='ListarCounter'>
+        Has Completado <span>{completed}</span> de <span>{total}</span> tareas
       </h1>
     )
   }
