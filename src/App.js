@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import { ListarCounter } from './ListarCounter';
 import { ListarSearch } from './ListarSearch';
 import { ListarTareas } from './ListarTareas';
 import { ListarItem } from './ListarItem';
-import './App.css';
+import React from 'react';
+// import './App.css';
+
+const defaultTareas = [
+  { text: 'Tareas 1', completed: true },
+  { text: 'Tareas 2', completed: false },
+  { text: 'Tareas 3', completed: false },
+  { text: 'Tareas 4', completed: false },
+];
 
 function App() {
   return (
-    <div className="App">
+    // <div className="App"> {/*contenedor global por defecto*/}</div>
+    <React.Fragment>
       {/* Se llaman los componentes de react */}
-      <ListarCounter />
+      <ListarCounter completed={16} total={25}/>
       <ListarSearch />
       <ListarTareas>
-        <ListarItem />
-        <ListarItem />
-        <ListarItem />
-        <ListarItem />
+        {defaultTareas.map(tarea => (
+          <ListarItem 
+          key={tarea.text} 
+          text={tarea.text}
+          completed={tarea.completed}
+          />
+        ))}
       </ListarTareas>
-      {/* <CrearItemButton /> */}
 
-    </div>
+
+     
+
+
+      {/* <CrearItemButton /> */}
+    </React.Fragment>
+
   );
 }
 

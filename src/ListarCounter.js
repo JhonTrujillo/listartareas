@@ -1,8 +1,8 @@
 // se crea el componente ListaCounter
-function ListarCounter() {
+function ListarCounter({total, completed}) {
     return (
       <h1>
-        Has Completado 3 de 5 tareas
+        Has Completado {completed} de {total} tareas
       </h1>
     )
   }

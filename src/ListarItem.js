@@ -1,9 +1,9 @@
 // se crea el componente ListaItem
-function ListarItem() {
+function ListarItem(props) {
     return (
       <li>
-        <span>V</span>
-        <p>primer item</p>
+        <span>V{props.completed}</span>
+        <p>{props.text}</p>
         <span>X</span>
       </li>
     )
