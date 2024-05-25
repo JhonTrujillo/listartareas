@@ -3,8 +3,8 @@ import './ListarItem.css'
 function ListarItem(props) {
     return (
       <li className='ListarItem'>
-        <span className="Icon Icon-ckeck Icon-check--active">V{props.completed}</span>
-        <p className='ListarItem-p ListarItem-p--complete'>{props.text}</p>
+        <span className={`Icon Icon-ckeck ${props.completed && "Icon-check--active"}`}>V{props.completed}</span>
+        <p className={`ListarItem-p ListarItem-p--complete`}>{props.text}</p>
         <span className='Icon Icon-delete'>X</span>
       </li>
     )
