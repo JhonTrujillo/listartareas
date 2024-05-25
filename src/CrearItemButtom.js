@@ -2,7 +2,8 @@ import './CrearItemButtom.css';
 // se crea el componente ListaCounter
 function CrearItemButtom() {
     return (
-      <button className='CreateItemButtom'>+</button>
+      <button className="CreateItemButtom" 
+      onClick={()=> console.log('Diste Click')}>+</button>
     )
   }
 
