@@ -11,7 +11,7 @@ const defaultTareas = [
   { text: 'Tareas 1', completed: true },
   { text: 'Tareas 2', completed: false },
   { text: 'Tareas 3', completed: false },
-  { text: 'Tareas 4', completed: false },
+  { text: 'Tareas 4', completed: true },
 ];
 
 function App() {
@@ -20,11 +20,19 @@ function App() {
    const [searchValue, setSearchValue] = React.useState('');
    console.log('Usuario busca las tareas ' + searchValue);
 
+   //Creando el estado de Tareas llamando por default el arreglo defaultTareas
+   const [tareas, setTareas] = React.useState(defaultTareas);
+
+  const completedTareas = tareas.filter(tareas => tareas.completed).length;
+  const totalTareas = tareas.length;
+
   return (
     // <div className="App"> {/*contenedor global por defecto*/}</div>
     <React.Fragment>
       {/* Se llaman los componentes de react */}
-      <ListarCounter completed={16} total={25}/>
+      {/* <ListarCounter completed={16} total={25}/> */}
+      <ListarCounter completed={completedTareas} total={totalTareas}/>
+      
       <ListarSearch 
       //compartimos el estado Search al componente Search.
       searchValue={searchValue}
