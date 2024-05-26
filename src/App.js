@@ -15,12 +15,21 @@ const defaultTareas = [
 ];
 
 function App() {
+
+  //Estado Componente Search.
+   const [searchValue, setSearchValue] = React.useState('');
+   console.log('Usuario busca las tareas ' + searchValue);
+
   return (
     // <div className="App"> {/*contenedor global por defecto*/}</div>
     <React.Fragment>
       {/* Se llaman los componentes de react */}
       <ListarCounter completed={16} total={25}/>
-      <ListarSearch />
+      <ListarSearch 
+      //compartimos el estado Search al componente Search.
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      />
       <ListarTareas>
         {defaultTareas.map(tarea => (
           <ListarItem 
