@@ -8,10 +8,10 @@ import React from 'react';
 import './App.css';
 
 const defaultTareas = [
-  { text: 'Tareas 1', completed: true },
-  { text: 'Tareas 2', completed: false },
-  { text: 'Tareas 3', completed: false },
-  { text: 'Tareas 4', completed: true },
+  { text: 'Fresa', completed: true },
+  { text: 'Pera', completed: false },
+  { text: 'Manzana', completed: false },
+  { text: 'limon', completed: true },
 ];
 
 function App() {
@@ -23,8 +23,17 @@ function App() {
    //Creando el estado de Tareas llamando por default el arreglo defaultTareas
    const [tareas, setTareas] = React.useState(defaultTareas);
 
+    //Contando tareas completadas
   const completedTareas = tareas.filter(tareas => tareas.completed).length;
   const totalTareas = tareas.length;
+
+  //Buscando tareas
+  const searchedTareas = tareas.filter(
+    (tareas) => {
+      return tareas.text.toLowerCase().includes
+      (searchValue.toLocaleLowerCase());
+    }
+  );
 
   return (
     // <div className="App"> {/*contenedor global por defecto*/}</div>
@@ -39,7 +48,7 @@ function App() {
       setSearchValue={setSearchValue}
       />
       <ListarTareas>
-        {defaultTareas.map(tarea => (
+        {searchedTareas.map(tarea => (
           <ListarItem 
           key={tarea.text} 
           text={tarea.text}
