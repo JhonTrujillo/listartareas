@@ -35,6 +35,27 @@ function App() {
     }
   );
 
+  // completando tarea
+  const completeTareas = (text) => {
+    const newTareas = [... tareas];
+    const tareasIndex = newTareas.findIndex(
+      (tareas) => tareas.text == text
+    );    
+    newTareas[tareasIndex].completed = true;
+    setTareas(newTareas);
+  };
+
+  //Eliminar Tarea completada
+  const deleteTareas = (text) => {
+    const newTareas = [... tareas];
+    const tareasIndex = newTareas.findIndex(
+      (tareas) => tareas.text == text
+    );    
+    newTareas.splice(tareasIndex, 1);
+    setTareas(newTareas);
+  };
+
+
   return (
     // <div className="App"> {/*contenedor global por defecto*/}</div>
     <React.Fragment>
@@ -53,6 +74,8 @@ function App() {
           key={tarea.text} 
           text={tarea.text}
           completed={tarea.completed}
+          onComplete={() => completeTareas(tarea.text)}
+          onDelete={() => deleteTareas(tarea.text)}
           />
         ))}
       </ListarTareas>
